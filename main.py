@@ -1,4 +1,5 @@
 import os
+import sys
 
 import pandas as pd
 import random
@@ -18,7 +19,13 @@ df = pd.read_csv('tracks.csv', sep=';', encoding='utf-16-le')
 df = df.sample(frac=1)
 acrostic_list = []
 
-for letter in "MUTLUYILLARIYIKIDOGDUN":
+if len(sys.argv) <= 1:
+    print("Please enter a phrase")
+    sys.exit(1)
+
+phrase = sys.argv[1]
+
+for letter in phrase:
     tracks = df.loc[df['track_name'].str.startswith(letter), 'track_id'].tolist()
     track_name = random.choice(tracks)
     df = df[df['track_name'] != track_name]
