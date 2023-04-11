@@ -15,7 +15,7 @@ sp = spotipy.Spotify(auth_manager=SpotifyOAuth(client_id=client_id,
                                                client_secret=client_secret,
                                                redirect_uri='http://localhost:8888/callback',
                                                scope='playlist-modify-private'))
-df = pd.read_csv('tracks.csv', sep=';', encoding='utf-16-le')
+df = pd.read_csv('tracks.csv.example', sep=';', encoding='utf-16-le')
 df = df.sample(frac=1)
 acrostic_list = []
 
