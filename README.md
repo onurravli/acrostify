@@ -1,6 +1,12 @@
 ## acrostify
 Generate acrostic Spotify playlists from a word or phrase.
 
+### Installation
+You have to install dependencies first:
+```
+pip install -r requirements.txt
+```
+
 ### Usage
 ```
 python acrostify.py <word or phrase>
